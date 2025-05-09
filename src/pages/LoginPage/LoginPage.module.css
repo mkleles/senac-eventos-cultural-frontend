@@ -1,0 +1,103 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color:#2c3e5050;
+    color: white;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #45a049;
+    transition: background-color 0.3s;
+  }
+  
+  nav a:hover {
+    background-color: #3e8e41;
+  }
+  
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6e7dff, #8e44ad);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .inputGroup label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .inputGroup input:focus {
+    border-color: #6e7dff;
+    outline: none;
+  }
+  
+  .btnEntrar {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #6e7dff;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btnEntrar:hover {
+    background-color: #5a6bcf;
+  }
+  
+  .cadastroLink {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .cadastroLink a {
+    color: #6e7dff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cadastroLink a:hover {
+    text-decoration: underline;
+  }
+  
