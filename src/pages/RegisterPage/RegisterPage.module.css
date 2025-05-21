@@ -14,14 +14,26 @@ body {
   min-height: 100vh;
 }
 
+/* Contêiner da página */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* Cabeçalho fixo */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #004A8D; /* Azul Senac */
   color: white;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
 
 /* Logo */
@@ -47,21 +59,25 @@ body {
 }
 
 .navButton:hover {
-  background-color: #FDC180; /* Laranja Claro */
+  background-color: #e68300; /* Laranja escuro no hover */
 }
 
 /* Conteúdo principal */
 .mainContent {
+  flex-grow: 1;
   padding: 2rem;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Título */
 .title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: #004A8D;
+  text-align: center;
 }
 
 /* Formulário */
@@ -70,8 +86,11 @@ body {
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
 }
 
+/* Grupos de entrada */
 .inputGroup {
   margin-bottom: 1.5rem;
 }
@@ -81,6 +100,7 @@ body {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .inputGroup input,
@@ -95,12 +115,30 @@ body {
 
 .inputGroup input:focus,
 .inputGroup select:focus {
-  border-color: #6e7dff;
+  border-color: #004A8D;
   outline: none;
 }
 
 /* Mensagens de erro */
 .error {
   color: red;
-  font-size:large
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+/* Botão de envio */
+.btnEntrar {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #004A8D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btnEntrar:hover {
+  background-color: #003770;
 }
