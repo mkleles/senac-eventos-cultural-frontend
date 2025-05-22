@@ -2,5 +2,6 @@ export const ROUTES = {
     home: '/',
     events: '/events',
     login: '/login',
-    register: '/register'
+    register: '/register',
+    create_events:'/create_events'
 };
