@@ -41,43 +41,53 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className={styles.pageContainer}>
-      <NavBarComponent />
-      <div className={styles.container}>
-        <h2 className={styles.title}>Login</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <div className={styles.inputGroup}>
-            <label htmlFor="email">E-mail</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Digite seu e-mail"
-              required
-            />
-          </div>
-          <div className={styles.inputGroup}>
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              id="password"
-              name="senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Digite sua senha"
-              required
-            />
-          </div>
-          <button type="submit" className={styles.btnEntrar}>Entrar</button>
-          {error && <div className={styles.error}>{error}</div>}
-          <p className={styles.cadastroLink}>
-            Não tem uma conta? <a href="/registro">Registre-se</a>
-          </p>
-        </form>
+   <div className={styles.pageContainer}>
+  <NavBarComponent />
+  <div className={styles.container}>
+    <h2 className={styles.title}>Login</h2>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      {/* Email */}
+      <div className={styles.inputGroup}>
+        <label htmlFor="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Digite seu e-mail"
+          required
+        />
       </div>
-    </div>  
+
+      {/* Senha */}
+      <div className={styles.inputGroup}>
+        <label htmlFor="password">Senha</label>
+        <input
+          type="password"
+          id="password"
+          name="senha"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Digite sua senha"
+          required
+        />
+      </div>
+
+      {/* Botão */}
+      <button type="submit" className={styles.btnEntrar}>Entrar</button>
+
+      {/* Erro */}
+      {error && <div className={styles.error}>{error}</div>}
+
+      {/* Link de cadastro */}
+      <p className={styles.cadastroLink}>
+        Não tem uma conta? <a href="/registro">Registre-se</a>
+      </p>
+    </form>
+  </div>
+</div>
+  
   );
 };
 
