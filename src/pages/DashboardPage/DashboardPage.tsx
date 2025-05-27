@@ -22,7 +22,7 @@ function DashboardPage() {
 
 
     const [editing, setEditing] = useState<Event | null>(null);
-    const [formData, setFormData] = useState<Partial<Event & { bannerFile?: File }>>([]);
+    const [formData, setFormData] = useState<Partial<Event & { bannerFile?: File }>>({});
     const [modalError, setModalError] = useState<string | null>(null);
     const [modalSuccess, setModalSucess] = useState<boolean>(false);
 
@@ -149,7 +149,19 @@ function DashboardPage() {
                 <tbody>
                     {events.map(evt =>(
                         <tr key={evt.id}>
+                           <td>{evt.title}</td>
+                           <td>{evt.subscriptionCount}</td>
+                           <td>{new Date(evt.createdAt).toLocaleDateString()}</td>
+                           <td className={styles.actions}>
+                            <button onClick={() => (evt.id)}>
+                                Visualizar participantes
+                            </button>
+
+
                             
+                            <button onClick={() => openEditModal(evt)}>Editar</button>
+                            <button className={styles.deletebtn} onClick={() => handleDelete(evt.id)}>Excluir</button>
+                           </td>
                         </tr>
                     ))}
                 </tbody>
@@ -157,7 +169,64 @@ function DashboardPage() {
         </div>
 
         {editing && (
-
+            <div className={styles.modalOverlay}>
+                <div className={styles.modal}>
+                    <h2>Editar Evento</h2>
+                    {modalError && <div className={styles.error}>{modalError}</div>}
+                    <form onSubmit={handleUpdate}>
+                        <label>
+                            Título
+                            <input
+                            type="text"
+                            value={formData.title}
+                            onChange={e => setFormData(f => ({...f, title: e.target.value }))}
+                            required 
+                            />
+                        </label>
+                        <label>
+                            Descrição
+                            <textarea
+                            value={formData.description}
+                            onChange={e => setFormData(f => ({...f, description: e.target.value }))}
+                            required
+                            />
+                        </label>
+                        <label>
+                            Localização
+                            <input
+                            type="text"
+                            value={formData.location}
+                            onChange={e => setFormData(f => ({...f, location: e.target.value }))}
+                            required
+                            />
+                        </label>
+                        <label>
+                            Preço
+                            <input
+                            type="number"
+                            min="0"
+                            value={formData.price ?? ''}
+                            onChange={e => setFormData(f => ({...f, price: Number(e.target.value) }))}
+                            required
+                            />
+                        </label>
+                        <label>
+                            Novo Banner (opcional)
+                            <input
+                            type="file"
+                            accept="image/*"
+                            onChange={e => {const file = e.target.files?.[0];
+                                setFormData(f =>({...f, bannerFile: file }));
+                            }}
+                            /> 
+                        </label>
+                        <div className={styles.modalActions}>
+                            <button type="button" onClick={() => setEditing(null)}>Cancelar</button>
+                            <button type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         )}
         </>
     );

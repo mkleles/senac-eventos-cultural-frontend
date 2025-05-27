@@ -4,5 +4,6 @@ export const ROUTES = {
     login: '/login',
     meuseventos: '/meuseventos',
     register: '/register',
-    create_events:'/create_events'
+    create_events:'/create_events',
+    dashboard:'/dashboard'
 };
