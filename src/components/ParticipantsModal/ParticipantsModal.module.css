@@ -1,0 +1,87 @@
+/* ParticipantsModal.module.css */
+
+.pmOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+  padding: 1rem;
+}
+
+.pmModal {
+  background: #fff;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  padding: 1.5rem 2rem;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pmClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.pmClose:hover {
+  color: #000;
+}
+
+.pmModal h2 {
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.pmList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pmItem {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.pmItem:last-child {
+  border-bottom: none;
+}
+
+.pmError {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pmModal p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 1rem;
+}
