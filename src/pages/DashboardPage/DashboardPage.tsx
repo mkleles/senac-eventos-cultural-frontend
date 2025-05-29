@@ -1,5 +1,5 @@
 // src/pages/MyEventsPage.tsx
-import React, { useEffect, useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import styles from './DashboardPage.module.css';
 import NavBarComponent from '../../components/NavBar/NavBarComponent';
 import { useNavigate } from 'react-router';
@@ -183,6 +183,7 @@ function DashBoardPage() {
           <div className={styles.modal}>
             <h2>Editar Evento</h2>
             {modalError && <div className={styles.error}>{modalError}</div>}
+            {modalSuccess && <div><p>Sucesso</p></div>}
             <form onSubmit={handleUpdate}>
               <label>
                 Título
